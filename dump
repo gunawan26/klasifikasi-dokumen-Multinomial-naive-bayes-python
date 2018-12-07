@@ -1,0 +1,3 @@
+		self.choices = self.parameter_kategori
+		self.m_training_topik = ComboBox.PromptingComboBox(self.Training_page,"", self.choices, style=wx.CB_SORT)
+		bSizer9.Add(self.m_training_topik, 0, wx.ALL | wx.EXPAND, 5)

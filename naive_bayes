@@ -1,0 +1,30 @@
+from cleanse_data import TrainingData
+import numpy as np
+
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+import event_handler
+import wx
+import os
+
+class OpenGui(wx.App):
+
+    def OnInit(self):
+        myframe = event_handler.myEvent(None)
+        myframe.Show(True)
+        return True
+
+
+
+def main():
+
+    app = OpenGui()
+    app.MainLoop()
+    # dummy_word ="   "
+    #clean_word = TrainingData.clean_words(dummy_word)
+    #print(clean_word)
+
+
+if __name__ == "__main__":
+    main()
