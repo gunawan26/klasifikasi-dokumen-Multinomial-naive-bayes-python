@@ -28,10 +28,23 @@ class resultPanel(noname.MyFrame3):
         self.m_judul_result.AppendText(judul_args)
         self.m_abstrak_result.AppendText(abstrak_args)
         self.m_stem_result.AppendText(hasil_stemming_args)
-        self.m_result.AppendText(str(result_args))
+        self.m_result.AppendText("Kategori Jurnal\t:\t{0}\n".format(result_args[0]))
 
-        self.m_result.AppendText("Akurasi : {0}".format(cross_args[0]))
-        self.m_result.AppendText(cross_args[1])
+        self.m_result.AppendText("Akurasi\t\t:\t{0}\n".format(cross_args[0]))
+        #self.m_result.AppendText(cross_args[1])
+        arr_result = []
+        for x in cross_args[1]:
+            print(cross_args[1][x])
+            arr_result.append(x)
+            for key,value in cross_args[1][x].items():
+                arr_result.append(value)
+                print(value)
+
+            self.m_dataViewList_result.AppendItem(arr_result)
+            arr_result = []
+        #print(cross_args[1]["psikologi"])
+        #for x in range(len(cross_args[1])):
+
 
 
 
@@ -202,11 +215,11 @@ class myEvent(noname.MyFrame1):
         labels_test_cros = job_df_new.kategori
 
 
-        with open('variable_set.txt','w') as f:
-            f.write(str(variables))
-
-        with open('label_set.txt','w') as f:
-            f.write(str(labels))
+        # with open('variable_set.txt','w') as f:
+        #     f.write(str(variables))
+        #
+        # with open('label_set.txt','w') as f:
+        #     f.write(str(labels))
 
         wx.MessageBox('Proses Training Selesai', 'Sukses', wx.OK)
 
@@ -266,7 +279,7 @@ class myEvent(noname.MyFrame1):
         #print("akurasi")
         #print(mn_ascore_accuration)
         #print("Classification Metrics: ")
-        classification_metric = sklearn.metrics.classification_report(labels_test, prediction_mn)
+        classification_metric = sklearn.metrics.classification_report(labels_test, prediction_mn,labels=None, target_names=None, sample_weight=None, digits=2, output_dict=True)
         print(classification_metric)
         #print(type(classification_metric))
         print(sklearn.metrics.confusion_matrix(labels_test, prediction_mn))

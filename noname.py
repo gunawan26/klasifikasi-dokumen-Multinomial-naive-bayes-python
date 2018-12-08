@@ -121,7 +121,7 @@ class MyFrame1(wx.Frame):
         self.Training_page1.SetSizer(bSizer91)
         self.Training_page1.Layout()
         bSizer91.Fit(self.Training_page1)
-        self.m_notebook31.AddPage(self.Training_page1, u"a page", False)
+        self.m_notebook31.AddPage(self.Training_page1, u"Testing", False)
 
         bSizer1.Add(self.m_notebook31, 1, wx.EXPAND | wx.ALL, 5)
 
@@ -222,66 +222,179 @@ class MyFrame2(wx.Frame):
         pass
 
 
+# class MyFrame3(wx.Frame):
+#
+#     def __init__(self, parent):
+#         wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=wx.EmptyString, pos=wx.DefaultPosition,
+#                           size=wx.Size(423, 745), style=wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL)
+#
+#         self.SetSizeHintsSz(wx.DefaultSize, wx.DefaultSize)
+#         self.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_MENU))
+#
+#         bSizer12 = wx.BoxSizer(wx.VERTICAL)
+#
+#         self.m_panel4 = wx.Panel(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+#         self.m_panel4.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_MENU))
+#
+#         bSizer13 = wx.BoxSizer(wx.VERTICAL)
+#
+#         self.m_staticText6 = wx.StaticText(self.m_panel4, wx.ID_ANY, u"Judul", wx.DefaultPosition, wx.DefaultSize, 0)
+#         self.m_staticText6.Wrap(-1)
+#         bSizer13.Add(self.m_staticText6, 0, wx.ALL, 5)
+#
+#         self.m_judul_result = wx.TextCtrl(self.m_panel4, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize,
+#                                           wx.TE_READONLY)
+#         bSizer13.Add(self.m_judul_result, 0, wx.ALL | wx.EXPAND, 5)
+#
+#         self.m_staticText7 = wx.StaticText(self.m_panel4, wx.ID_ANY, u"Abstrak", wx.DefaultPosition, wx.DefaultSize, 0)
+#         self.m_staticText7.Wrap(-1)
+#         bSizer13.Add(self.m_staticText7, 0, wx.ALL, 5)
+#
+#         self.m_abstrak_result = wx.TextCtrl(self.m_panel4, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+#                                             wx.Size(-1, -1), wx.TE_MULTILINE | wx.TE_READONLY)
+#         self.m_abstrak_result.SetMinSize(wx.Size(-1, 200))
+#
+#         bSizer13.Add(self.m_abstrak_result, 0, wx.ALL | wx.EXPAND, 5)
+#
+#         self.m_staticText8 = wx.StaticText(self.m_panel4, wx.ID_ANY, u"Hasil Stemming dan Tokenisasi",
+#                                            wx.DefaultPosition, wx.DefaultSize, 0)
+#         self.m_staticText8.Wrap(-1)
+#         bSizer13.Add(self.m_staticText8, 0, wx.ALL, 5)
+#
+#         self.m_stem_result = wx.TextCtrl(self.m_panel4, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize,
+#                                          wx.TE_MULTILINE | wx.TE_READONLY)
+#         self.m_stem_result.SetMinSize(wx.Size(-1, 200))
+#
+#         bSizer13.Add(self.m_stem_result, 0, wx.ALL | wx.EXPAND, 5)
+#
+#         self.m_result = wx.TextCtrl(self.m_panel4, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size(-1, 150),
+#                                     wx.TE_MULTILINE | wx.TE_READONLY | wx.ALWAYS_SHOW_SB)
+#         self.m_result.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_MENU))
+#         bSizer13.Add(self.m_result, 1, wx.ALL | wx.EXPAND, 5)
+#
+#         #=================================================#
+#
+#         self.m_dataViewList_result = wx.dataview.DataViewListCtrl(self.m_panel4, wx.ID_ANY, wx.DefaultPosition,
+#                                                                   wx.DefaultSize, 0)
+#         self.m_dataViewList_result.SetMinSize(wx.Size(-1, 100))
+#
+#         self.m_dataViewListColumn4 = self.m_dataViewList_result.AppendTextColumn(u"Ket")
+#         self.m_dataViewListColumn5 = self.m_dataViewList_result.AppendTextColumn(u"Presicion")
+#         self.m_dataViewListColumn6 = self.m_dataViewList_result.AppendTextColumn(u"Recall")
+#         self.m_dataViewListColumn7 = self.m_dataViewList_result.AppendTextColumn(u"F1-Score")
+#         self.m_dataViewListColumn8 = self.m_dataViewList_result.AppendTextColumn(u"Support")
+#         bSizer13.Add(self.m_dataViewList_result, 0, wx.ALL | wx.EXPAND, 5)
+#
+#
+#         #=================================================#
+#
+#         bSizer14 = wx.BoxSizer(wx.HORIZONTAL)
+#
+#         self.m_button_exit_result = wx.Button(self.m_panel4, wx.ID_ANY, u"Exit", wx.DefaultPosition, wx.DefaultSize, 0)
+#         bSizer14.Add(self.m_button_exit_result, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 5)
+#
+#         bSizer13.Add(bSizer14, 0, wx.ALIGN_RIGHT, 5)
+#
+#         self.m_panel4.SetSizer(bSizer13)
+#         self.m_panel4.Layout()
+#         bSizer13.Fit(self.m_panel4)
+#         bSizer12.Add(self.m_panel4, 1, wx.EXPAND | wx.ALL, 5)
+#
+#         self.SetSizer(bSizer12)
+#         self.Layout()
+#
+#         self.Centre(wx.BOTH)
+#
+#     def __del__(self):
+#         pass
+
+###########################################################################
+## Class MyFrame3
+###########################################################################
+
 class MyFrame3(wx.Frame):
 
     def __init__(self, parent):
         wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=wx.EmptyString, pos=wx.DefaultPosition,
-                          size=wx.Size(423, 745), style=wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL)
+                          size=wx.Size(936, 712), style=wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL)
 
         self.SetSizeHintsSz(wx.DefaultSize, wx.DefaultSize)
         self.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_MENU))
 
         bSizer12 = wx.BoxSizer(wx.VERTICAL)
 
-        self.m_panel4 = wx.Panel(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
-        self.m_panel4.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_MENU))
-
+        self.m_scrolledWindow2 = wx.ScrolledWindow(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize,
+                                                   wx.HSCROLL | wx.VSCROLL)
+        self.m_scrolledWindow2.SetScrollRate(5, 5)
         bSizer13 = wx.BoxSizer(wx.VERTICAL)
 
-        self.m_staticText6 = wx.StaticText(self.m_panel4, wx.ID_ANY, u"Judul", wx.DefaultPosition, wx.DefaultSize, 0)
+        self.m_staticText6 = wx.StaticText(self.m_scrolledWindow2, wx.ID_ANY, u"Judul", wx.DefaultPosition,
+                                           wx.DefaultSize, 0)
         self.m_staticText6.Wrap(-1)
         bSizer13.Add(self.m_staticText6, 0, wx.ALL, 5)
 
-        self.m_judul_result = wx.TextCtrl(self.m_panel4, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize,
-                                          wx.TE_READONLY)
+        self.m_judul_result = wx.TextCtrl(self.m_scrolledWindow2, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                          wx.DefaultSize, wx.TE_READONLY)
         bSizer13.Add(self.m_judul_result, 0, wx.ALL | wx.EXPAND, 5)
 
-        self.m_staticText7 = wx.StaticText(self.m_panel4, wx.ID_ANY, u"Abstrak", wx.DefaultPosition, wx.DefaultSize, 0)
+        self.m_staticText7 = wx.StaticText(self.m_scrolledWindow2, wx.ID_ANY, u"Abstrak", wx.DefaultPosition,
+                                           wx.DefaultSize, 0)
         self.m_staticText7.Wrap(-1)
         bSizer13.Add(self.m_staticText7, 0, wx.ALL, 5)
 
-        self.m_abstrak_result = wx.TextCtrl(self.m_panel4, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
-                                            wx.Size(-1, -1), wx.TE_MULTILINE | wx.TE_READONLY)
-        self.m_abstrak_result.SetMinSize(wx.Size(-1, 200))
+        self.m_abstrak_result = wx.TextCtrl(self.m_scrolledWindow2, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                            wx.Size(-1, -1), wx.TE_MULTILINE | wx.TE_READONLY | wx.ALWAYS_SHOW_SB)
+        self.m_abstrak_result.SetMinSize(wx.Size(-1, 150))
 
         bSizer13.Add(self.m_abstrak_result, 0, wx.ALL | wx.EXPAND, 5)
 
-        self.m_staticText8 = wx.StaticText(self.m_panel4, wx.ID_ANY, u"Hasil Stemming dan Tokenisasi",
-                                           wx.DefaultPosition, wx.DefaultSize, 0)
+        self.m_staticText8 = wx.StaticText(self.m_scrolledWindow2, wx.ID_ANY, u"Preprocessing", wx.DefaultPosition,
+                                           wx.DefaultSize, 0)
         self.m_staticText8.Wrap(-1)
         bSizer13.Add(self.m_staticText8, 0, wx.ALL, 5)
 
-        self.m_stem_result = wx.TextCtrl(self.m_panel4, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize,
-                                         wx.TE_MULTILINE | wx.TE_READONLY)
-        self.m_stem_result.SetMinSize(wx.Size(-1, 200))
+        self.m_stem_result = wx.TextCtrl(self.m_scrolledWindow2, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                         wx.DefaultSize, wx.TE_MULTILINE | wx.TE_READONLY | wx.ALWAYS_SHOW_SB)
+        self.m_stem_result.SetMinSize(wx.Size(-1, 150))
 
         bSizer13.Add(self.m_stem_result, 0, wx.ALL | wx.EXPAND, 5)
 
-        self.m_result = wx.TextCtrl(self.m_panel4, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size(-1, 150),
-                                    wx.TE_READONLY | wx.ALWAYS_SHOW_SB)
+        self.m_staticText81 = wx.StaticText(self.m_scrolledWindow2, wx.ID_ANY, u"Result", wx.DefaultPosition,
+                                            wx.DefaultSize, 0)
+        self.m_staticText81.Wrap(-1)
+        bSizer13.Add(self.m_staticText81, 0, wx.ALL, 5)
+
+        self.m_result = wx.TextCtrl(self.m_scrolledWindow2, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                    wx.Size(-1, 100),
+                                    wx.TE_MULTILINE | wx.TE_NO_VSCROLL | wx.TE_READONLY | wx.ALWAYS_SHOW_SB)
+        self.m_result.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_MENU))
+
         bSizer13.Add(self.m_result, 1, wx.ALL | wx.EXPAND, 5)
+
+        self.m_dataViewList_result = wx.dataview.DataViewListCtrl(self.m_scrolledWindow2, wx.ID_ANY, wx.DefaultPosition,
+                                                                  wx.DefaultSize, 0)
+        self.m_dataViewList_result.SetMinSize(wx.Size(-1, 100))
+
+        self.m_dataViewListColumn4 = self.m_dataViewList_result.AppendTextColumn(u"Ket")
+
+        self.m_dataViewListColumn5 = self.m_dataViewList_result.AppendTextColumn(u"Presicion")
+        self.m_dataViewListColumn6 = self.m_dataViewList_result.AppendTextColumn(u"Recall")
+        self.m_dataViewListColumn7 = self.m_dataViewList_result.AppendTextColumn(u"F1-Score")
+        self.m_dataViewListColumn8 = self.m_dataViewList_result.AppendTextColumn(u"Support")
+        bSizer13.Add(self.m_dataViewList_result, 0, wx.ALL | wx.EXPAND, 5)
 
         bSizer14 = wx.BoxSizer(wx.HORIZONTAL)
 
-        self.m_button_exit_result = wx.Button(self.m_panel4, wx.ID_ANY, u"Exit", wx.DefaultPosition, wx.DefaultSize, 0)
-        bSizer14.Add(self.m_button_exit_result, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 5)
+        self.m_button5_ext = wx.Button(self.m_scrolledWindow2, wx.ID_ANY, u"Exit", wx.DefaultPosition, wx.DefaultSize,
+                                   0)
+        bSizer14.Add(self.m_button5_ext, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 5)
 
         bSizer13.Add(bSizer14, 0, wx.ALIGN_RIGHT, 5)
 
-        self.m_panel4.SetSizer(bSizer13)
-        self.m_panel4.Layout()
-        bSizer13.Fit(self.m_panel4)
-        bSizer12.Add(self.m_panel4, 1, wx.EXPAND | wx.ALL, 5)
+        self.m_scrolledWindow2.SetSizer(bSizer13)
+        self.m_scrolledWindow2.Layout()
+        bSizer13.Fit(self.m_scrolledWindow2)
+        bSizer12.Add(self.m_scrolledWindow2, 1, wx.EXPAND | wx.ALL, 5)
 
         self.SetSizer(bSizer12)
         self.Layout()
